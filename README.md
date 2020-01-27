@@ -24,10 +24,12 @@ Release:        18.04
 Codename:       bionic
 kmaster@kmaster:~$
 
-Additionally, I have a 4th node outside the cluster, but in the same LAN that I am using as a NFS Server :-
+Additionally, I have a 4th node outside the cluster, but in the same
+LAN that I am using as a NFS Server :-
 minikube - 192.168.1.85 (NFS Server running here)
 
-On the NFS Server I have exposed the three directories to the above cluster (permit all) directory names are gold, silver, bronze.
+On the NFS Server I have exposed the three directories to the above
+cluster (permit all) directory names are gold, silver, bronze.
 In the PVC I am just using gold as an example.
 
 Created the Persistent Volume
