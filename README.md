@@ -96,8 +96,8 @@ kmaster@kmaster:~/dockerimagemaker/NFS$
   
 To test the setup I created the below deployment and had the POD write to the gold directory. 
 
-kmaster@kmaster:~$ kubectl create -f nfs-deployment.yml
-deployment.apps/nfs-tester created
+kmaster@kmaster:~$ kubectl create -f nfstester.yml
+deployment.apps/nfstester created
 kmaster@kmaster:~$
 
 Verify
