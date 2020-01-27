@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfstester
+  labels:
+    type: nfstester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: nfstester
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        type: nfstester
+    spec:
+      volumes:
+        - name: nfstester
+          persistentVolumeClaim:
+            claimName: nfs-pvc
+      containers:
+      - name: nfstester
+        image: busybox
+        command: [ 'sh', '-c', 'while true; do date;sleep 10; done >> /tmp/hellopod.txt']
+        volumeMounts:
+          - name: nfstester
+            mountPath: /tmp
