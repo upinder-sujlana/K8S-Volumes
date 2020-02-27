@@ -109,6 +109,14 @@ Wed Jan 15 20:51:06 UTC 2020
 Wed Jan 15 20:51:16 UTC 2020
 Wed Jan 15 20:51:26 UTC 2020
 
+Final Note on how the PV, PVC look like:
 
-  
+kmaster@kmaster:~/dockerimagemaker/NFS$ kubectl get pvc
+NAME      STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS         AGE
+nfs-pvc   Bound     nfs-pv   5Gi        RWX            manualstorageclass   24d
+kmaster@kmaster:~/dockerimagemaker/NFS$
+kmaster@kmaster:~/dockerimagemaker/NFS$ kubectl get pv
+NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS         REASON   AGE
+nfs-pv   5Gi        RWX            Retain           Bound    default/nfs-pvc   manualstorageclass            24d
+kmaster@kmaster:~/dockerimagemaker/NFS$  
 ```
